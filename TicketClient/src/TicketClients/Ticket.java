@@ -14,10 +14,12 @@ public class Ticket {
 
             try {
                 semaphore.acquire(); //блокуємо доступ
+                System.out.println();
                 if (availableTickets > 0) {
-                    System.out.println("\n" + clientName + " has booked a ticket. Tickets left: " + (--availableTickets) + ".");
+                  
+                    System.out.println(clientName + " has booked a ticket. Tickets left: " + (--availableTickets) + ".");
                 } else {
-                    System.out.println("\n" + clientName + " could not book the ticket. Unfortunately, the tickets are sold out.");
+                    System.out.println( clientName + " could not book the ticket. Unfortunately, the tickets are sold out.");
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
