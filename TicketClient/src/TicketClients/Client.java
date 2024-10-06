@@ -1,4 +1,4 @@
-package TicketClient;
+package TicketClients;
 class Client extends Thread{
     private Ticket booking;
     private String clientName;

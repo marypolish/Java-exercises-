@@ -1,4 +1,4 @@
-package TicketClient;
+package TicketClients;
 import java.util.concurrent.Semaphore;
 import java.time.LocalTime;
 public class Ticket {
@@ -15,9 +15,9 @@ public class Ticket {
             try {
                 semaphore.acquire(); //блокуємо доступ
                 if (availableTickets > 0) {
-                    System.out.println(clientName + "has booked a ticket. Tickets left: " + (--availableTickets));
+                    System.out.println("\n" + clientName + " has booked a ticket. Tickets left: " + (--availableTickets) + ".");
                 } else {
-                    System.out.println(clientName + "could not book the ticket. Unfortunately, the tickets are sold out.");
+                    System.out.println("\n" + clientName + " could not book the ticket. Unfortunately, the tickets are sold out.");
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
